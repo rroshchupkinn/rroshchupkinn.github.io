@@ -22,27 +22,22 @@ python3 -m http.server 8000
 # открыть http://localhost:8000
 ```
 
-## Деплой на GitHub Pages
+## Деплой
 
-GitHub Pages умеет отдавать сайт только из корня репозитория или из папки `/docs`
-— из произвольной подпапки (`/personal-site`) напрямую нельзя. Два пути:
+Сайт развёрнут на GitHub Pages: **https://rroshchupkinn.github.io**
 
-### Вариант 1 — отдельный репозиторий (рекомендуется)
+Репозиторий — `rroshchupkinn/rroshchupkinn.github.io`, ветка `main`, папка `/ (root)`.
+Эта папка (`personal-site/`) — локальная рабочая копия с тем же `origin`.
 
-Даёт чистый URL `https://rroshchupkinn.github.io`.
+Чтобы выкатить изменения, из папки `personal-site/`:
 
-1. Создать репозиторий с именем `rroshchupkinn.github.io`.
-2. Скопировать туда **содержимое** папки `personal-site/` (в корень репозитория).
-3. `git add . && git commit -m "personal site" && git push`.
-4. Settings → Pages → Source: `Deploy from a branch`, ветка `main`, папка `/ (root)`.
+```bash
+git add .
+git commit -m "update content"
+git push
+```
 
-### Вариант 2 — в текущем репозитории через `/docs`
-
-Даёт URL вида `https://rroshchupkinn.github.io/<repo>/`.
-
-1. Переименовать папку `personal-site/` в `docs/`.
-2. Запушить в `main`.
-3. Settings → Pages → Source: ветка `main`, папка `/docs`.
+Pages пересоберётся автоматически за ~1 минуту.
 
 ## Обновление контента
 
